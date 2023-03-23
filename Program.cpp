@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include<stdlib.h>
-#include<conio.h>
+#include<conio.h> //I added this library for getche method.
 
-void modifyMatrix(int matrix[3][3]) {
+void modifyMatrix(int matrix[3][3]) { // modifyMatrix function negates each element in the input matrix.
     int i, j;
     
     for (i = 0; i < 3; i++) {
@@ -12,7 +12,7 @@ void modifyMatrix(int matrix[3][3]) {
     }
 }
 
-void transpose(int matrix[3][3], int result[3][3]) {
+void transpose(int matrix[3][3], int result[3][3]) { // transpose function computes the transpose of the input matrix and stores it in the result matrix.
     int i, j;
 
     for (i = 0; i < 3; i++) {
@@ -22,7 +22,7 @@ void transpose(int matrix[3][3], int result[3][3]) {
     }
 }
 
-void findMaxInRow(int matrix[3][3]) {
+void findMaxInRow(int matrix[3][3]) { //The function finds the largest element in each row in a 3x3 matrix and prints it to the screen.
     int i, j;
     int max;
 
@@ -41,7 +41,7 @@ void findMaxInRow(int matrix[3][3]) {
     }
 }
 
-int isSymmetric(int matrix[3][3]) {
+int isSymmetric(int matrix[3][3]) {//The isSymmetric function checks if a 3x3 matrix is ??symmetric and returns a value of 1 or 0. Returns 1 if the matrix is symmetrical, 0 otherwise.
     int i, j;
 
     for (i = 0; i < 3; i++) {
@@ -54,7 +54,7 @@ int isSymmetric(int matrix[3][3]) {
     return 1;
 }
 
-int determinant(int matrix[3][3]) {
+int determinant(int matrix[3][3]) { //determinant function calculates the determinant of the matrix.
     int det;
 
     det = matrix[0][0] * (matrix[1][1] * matrix[2][2] - matrix[2][1] * matrix[1][2])
@@ -64,7 +64,7 @@ int determinant(int matrix[3][3]) {
     return det;
 }
 
-void inverse(int arr[3][3], float inv[3][3]) {
+void inverse(int arr[3][3], float inv[3][3]) {//This method computes the inverse of the matrix
     float det = determinant(arr);
     if (det == 0) {
         printf("The matrix is not invertible.\n");
@@ -105,12 +105,12 @@ void display(int matrix[3] [3]) {
 }
 
 int main() {
-    int matrix[3][3];
+    int matrix[3][3]; //I defined variables.
     int transposed_matrix[3][3];
     float inverse_matrix[3][3];
     int i, j;
     
-    printf("Enter the elements of a 3x3 matrix:\n");
+    printf("Enter the elements of a 3x3 matrix:\n"); //I took the first matrix as input
     for (i = 0; i < 3; i++) {
         for (j = 0; j < 3; j++) {
             scanf("%d", &matrix[i][j]);
@@ -118,7 +118,7 @@ int main() {
     }
     
     display(matrix);
-    while(true){
+    while(true){ //while loop to keep the program in the loop
         printf("\nChoose an operation to perform on the matrix:\n");
     	printf("[a] Modify matrix\n");
     	printf("[b] Transpose matrix\n");
@@ -129,7 +129,7 @@ int main() {
     	printf("[g] Display the matrix\n");
     	printf("[q] Quit\n");
     	char choose;
-    	//choose = getche();
+    	//choose = getche(); //I tried the getche method here, but removed it for ease of use.
         scanf(" %c",&choose);
         switch (choose)
         {
